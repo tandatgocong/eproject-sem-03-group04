@@ -1,0 +1,12 @@
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\Bin\Debug\AppManifest.xaml
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\Bin\Debug\SilverlightShow.dll
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\Bin\Debug\SilverlightShow.pdb
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\Bin\Debug\SilverlightShow.xap
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\Bin\Debug\TestPage.html
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\obj\Debug\ResolveAssemblyReference.cache
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\obj\Debug\App.g.cs
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\obj\Debug\Page.g.cs
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\obj\Debug\SilverlightShow.g.resources
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\obj\Debug\SilverlightShow.dll
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\obj\Debug\SilverlightShow.pdb
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\SilverlightShow\obj\Debug\XapCacheFile.xml

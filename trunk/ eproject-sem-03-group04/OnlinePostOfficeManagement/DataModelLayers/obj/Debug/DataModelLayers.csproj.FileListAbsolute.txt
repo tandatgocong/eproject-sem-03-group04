@@ -1,0 +1,5 @@
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataModelLayers\bin\Debug\DataModelLayers.dll
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataModelLayers\bin\Debug\DataModelLayers.pdb
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataModelLayers\obj\Debug\ResolveAssemblyReference.cache
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataModelLayers\obj\Debug\DataModelLayers.dll
+F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataModelLayers\obj\Debug\DataModelLayers.pdb
