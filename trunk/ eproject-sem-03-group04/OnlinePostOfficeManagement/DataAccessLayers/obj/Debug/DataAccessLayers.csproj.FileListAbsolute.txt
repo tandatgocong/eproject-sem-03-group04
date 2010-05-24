@@ -1,9 +1,0 @@
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataAccessLayers\obj\Debug\ResolveAssemblyReference.cache
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataAccessLayers\bin\Debug\DataAccessLayers.dll
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataAccessLayers\bin\Debug\DataAccessLayers.pdb
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataAccessLayers\obj\Debug\DataAccessLayers.dll
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataAccessLayers\obj\Debug\DataAccessLayers.pdb
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataAccessLayers\bin\Debug\DataModelLayers.dll
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataAccessLayers\bin\Debug\InterfaceDataLayers.dll
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataAccessLayers\bin\Debug\DataModelLayers.pdb
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\DataAccessLayers\bin\Debug\InterfaceDataLayers.pdb

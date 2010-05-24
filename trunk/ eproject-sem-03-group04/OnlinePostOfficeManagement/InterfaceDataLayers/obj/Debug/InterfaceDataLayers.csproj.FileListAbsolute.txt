@@ -1,7 +1,0 @@
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\InterfaceDataLayers\bin\Debug\InterfaceDataLayers.dll
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\InterfaceDataLayers\bin\Debug\InterfaceDataLayers.pdb
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\InterfaceDataLayers\obj\Debug\ResolveAssemblyReference.cache
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\InterfaceDataLayers\obj\Debug\InterfaceDataLayers.dll
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\InterfaceDataLayers\obj\Debug\InterfaceDataLayers.pdb
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\InterfaceDataLayers\bin\Debug\DataModelLayers.dll
-F:\LE TAN DAT\eproject-sem-03-group04\OnlinePostOfficeManagement\InterfaceDataLayers\bin\Debug\DataModelLayers.pdb
