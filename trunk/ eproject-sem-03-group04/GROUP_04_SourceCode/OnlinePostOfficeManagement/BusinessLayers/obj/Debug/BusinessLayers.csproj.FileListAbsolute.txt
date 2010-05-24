@@ -1,0 +1,12 @@
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\BusinessLayers.dll
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\BusinessLayers.pdb
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\ResolveAssemblyReference.cache
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\BusinessLayers.dll
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\BusinessLayers.pdb
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataAccessLayers.dll
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataModelLayers.dll
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\InterfaceDataLayers.dll
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\String_Indentity.dll
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataAccessLayers.pdb
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataModelLayers.pdb
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\InterfaceDataLayers.pdb
