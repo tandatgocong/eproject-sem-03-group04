@@ -209,3 +209,5 @@ CREATE TABLE COUNT_VISIT
 	[count]  INT NOT NULL
 )
 GO
+
+-------------------------- INSERT RECORD -------------------------------
