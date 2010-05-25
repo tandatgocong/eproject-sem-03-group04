@@ -8,9 +8,11 @@ using System.Web.UI.WebControls;
 public partial class _Default : System.Web.UI.Page 
 {
     DataAccessLayers.BranchDAL branch = new DataAccessLayers.BranchDAL();
+    DataAccessLayers.OfficeDAL off = new DataAccessLayers.OfficeDAL();
     protected void Page_Load(object sender, EventArgs e)
     {
         Binddata();
+        BinddataG2();
     }
     public void Binddata()
     {
@@ -23,5 +25,10 @@ public partial class _Default : System.Web.UI.Page
         branch.InsertBranche(info);
         UtilitiesLayers.MessageBox.Show(this,"thanhcong");
         Binddata();
+    }
+    public void BinddataG2()
+    {
+        this.GridView2.DataSource = off.getListOffice();
+        this.GridView2.DataBind();
     }
 }
