@@ -1,0 +1,68 @@
+﻿body 
+{
+    background-image:url('../image/home16.jpg');
+}
+.heoheo 
+{
+	background-image:url('../image/h_10.jpg');
+    height:25px;
+    display:block;
+	color:#FFF;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:10pt;
+	text-align:center;
+}
+.heoheo td a
+{
+	display:block;
+	color:#FFF;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:10pt;
+	text-align:center;
+}
+
+.heoheo a:hover
+{
+	display:block;
+	color:Red;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:10pt;
+	text-align:center;
+}
+
+.voicon td a
+{
+	display:block;
+	color:#284E98;
+	text-decoration:none;	
+	font-size:10pt;
+	font-family:Verdana;
+}
+
+.voicon a:hover
+{
+	display:block;
+	color:Yellow;
+	text-decoration:none;	
+	font-size:10pt;
+	font-family:Verdana;
+}
+
+.vitvit
+{
+    background:white;
+    height:755px;
+    text-align:left;
+    vertical-align:text-top;
+}
+.nantoantap
+{
+    display:block;
+	color:#FFF;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:15px;
+}

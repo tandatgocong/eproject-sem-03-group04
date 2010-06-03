@@ -9,6 +9,7 @@ public partial class WebCustomer_CustomerMasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        this.Label1.Text = DateTime.Now.ToLongDateString();
+        
     }
 }

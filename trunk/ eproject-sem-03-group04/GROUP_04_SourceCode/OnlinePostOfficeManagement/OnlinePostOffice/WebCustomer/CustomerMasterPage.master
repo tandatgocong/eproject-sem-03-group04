@@ -3,18 +3,163 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
-</head>
+    
+    <link href="../App_Themes/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style2
+        {
+            text-align: left;
+        }
+        .style3
+        {
+            height: 27px;
+        }
+    </style>
+    </head>
 <body>
-    <form id="form1" runat="server">
+<center>
+    <form id="form1" runat="server" style="width: 1000px; margin-right: 12px;">    
+     <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td colspan="3">
+                <img src="../image/bg_head.jpg" style="width: 1000px; height: 97px" /></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+            <table style="width: 100%; background-image:url('../image/h_5.jpg');" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                    <td>
+                        
+                        &nbsp;</td>
+                    <td style="width: 6px; height: 25px; background-image:url('../image/left.jpg');">
+                    </td>
+                    <td>
+                      <div class="heoheo">
+                         <table style="width:100%; height: 100%;" border="0" cellpadding="0" 
+                              cellspacing="0">
+                         <tr>
+                            <td >&nbsp;</td>
+                            <td style="width:15%;" ><a href="">HOME</a></td>
+                            <td>::</td>
+                            <td style="width:15%;" ><a href="">GIỚI THIÊU</a></td>
+                            <td>::</td>
+                            <td style="width:15%;"><a href="">SERVICES</a></td>
+                            <td>::</td>
+                            <td style="width:15%;"><a href="">CUSTOMERS</a></td>
+                            <td>::</td>
+                            <td style="width:15%;"><a href="">CONTACT</a></td>
+                            <td >&nbsp;</td>
+                        </tr>
+                        </table>
+                    </div>
+                    </td>
+                    <td style="width: 6px; height: 25px; background-image:url('../image/h_11.jpg');">
+                    </td>
+                    <td>                        
+                        &nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+         <tr>
+            <td colspan="3" 
+                 style="background-image: url('../image/h_33.jpg'); height:25px; text-align: left;">
+                  <table style="width:100%;" border="0" cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="Label1" runat="server" Text="Label" 
+                    Font-Names="Verdana"  ForeColor="#284E98"  Font-Size="0.8em"></asp:Label>
+                        </td>
+                        <td style="text-align: right">                            
+                            <asp:LoginView ID="LoginView1" runat="server">
+                                <LoggedInTemplate>
+                                    you
+                                </LoggedInTemplate>
+                                <AnonymousTemplate>                                    
+                                    <table >
+                                        <tr>
+                                            <td >
+                                                <asp:TextBox ID="Username" runat="server" Height="15px" MaxLength="20" 
+                                                    Font-Italic="True" Font-Size="Small" ForeColor="#999999">Email Address</asp:TextBox>
+                                            </td>
+                                            <td>
+                                               <asp:TextBox ID="Password" runat="server" Height="15px" MaxLength="20" 
+                                                    Font-Italic="True" Font-Size="Small" ForeColor="#999999" 
+                                                    TextMode="Password">Password</asp:TextBox>
+                                            </td>
+                                            <td>
+                                                <asp:Button ID="LoginButton" runat="server" Text="Log In" BackColor="White" 
+                                                    BorderColor="#507CD1" BorderStyle="Solid" BorderWidth="1px" CommandName="Login" 
+                                                    Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" 
+                                                    Height="20px" />
+                                            </td>
+                                            <td>
+                                                <asp:CheckBox ID="CheckBox1" Text="Remember." runat="server" 
+                                                    Font-Size="0.8em" Font-Names="Verdana" ForeColor="#284E98"  />
+                                            </td>
+                                            <td  style="background-image: url('../image/h_8.jpg');width: 4px;">
+                                               
+                                                </td>
+                                            <td>
+                                            <td style="width: 50px;">
+                                             
+                                        <asp:HyperLink ID="HyperLink1" runat="server"  Font-Size="0.8em" Font-Names="Verdana" ForeColor="#284E98" Font-Underline="False" 
+                                         NavigateUrl="#">Register</asp:HyperLink>
+                                                    
+                                                </td>
+                                            <td  style="background-image: url('../image/h_8.jpg');width: 4px;">
+                                               
+                                            </td>
+                                            <td>                        
+                        &nbsp;</td>
+                                        </tr>
+                                     
+                                    </table>
+                                    
+                                </AnonymousTemplate>
+                            </asp:LoginView>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="vitvit">Customers Page.</td>
+        </tr>
+        <tr>
+            <td colspan="3" style="width: 1000px; text-align:left; height: 134px;background-image: url('../image/bg191.jpg');">
+                
+               <table style="height: 87px" >
+            <tr>
+            <td style ="font-size:13px; font-weight:bold; font-family:Verdana; color:White;" class="style3" 
+                    >
+             &nbsp;&nbsp; Coppyright &copy; 2010 TARS Delivery System  Company, Inc.
+                <br />
+&nbsp;&nbsp; ..........: Online Post Office Management System :.........</td>
+            </tr>
+            <tr>
+	            <td style ="font-size:13px; font-weight:bold; display:block;text-decoration:none;color:#FFF;" 
+                    class="style4"  >&nbsp;&nbsp; 
+                GROUP 04&nbsp; FPT – ACADEMY INTERNATIONAL</td>
+            </tr>
+            <tr>
+            <td class="style2" >&nbsp;</td>
+            </tr>
+            </table>
+            </td>
+        </tr>
+    </table>
+   
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
     </form>
+  </center>  
 </body>
 </html>
