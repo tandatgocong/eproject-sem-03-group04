@@ -4,47 +4,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
-    
-    <link href="../App_Themes/StyleSheet.css" rel="stylesheet" type="text/css" />
-    
+     <link href="../App_Themes/StyleSheet.css" rel="stylesheet" type="text/css" />
+     <script type="text/javascript" src="../App_Themes/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#system").hide();
+        $("#customer").hide();
+        $("#deliverables").hide();
+        $("#employee").hide();
+        $("#ManagerSystem").mouseover(function() {
+        $("#system").slideDown("fast");
+            $("#customer").hide();
+            $("#deliverables").hide();
+            $("#employee").hide();
+         
+        });
+        $("#ManagerCustomers").mouseover(function() {
+            $("#system").hide();
+            $("#customer").slideDown("fast");
+            $("#deliverables").hide();
+            $("#employee").hide();
+        });
+        $("#ManagerEmployees").mouseover(function() {
+            $("#system").hide();
+            $("#customer").hide();
+            $("#deliverables").hide();
+            $("#employee").slideDown("fast");
+        });
+        $("#ManagerDeliverables").mouseover(function() {
+            $("#system").hide();
+            $("#customer").hide();
+            $("#deliverables").slideDown("fast");
+            $("#employee").hide();
+        });
 
-    <script language="javascript" type="text/javascript">
-// <!CDATA[
-
-        function SystemMouseover()
-        {
-            document.getElementById('system').getAttribute('style').visibility = 'visible';
-            document.getElementById('employee').getAttribute('style').visibility = 'hidden';
-            document.getElementById('DELIVERABLES').getAttribute('style').visibility = 'hidden';
-            document.getElementById('CUSTOMERS').getAttribute('style').visibility = 'hidden';
-            
-        }
-        function EmployeeMouseover()
-        {
-            document.getElementById('system').getAttribute('style').visibility = 'hidden';
-            document.getElementById('employee').getAttribute('style').visibility = 'visible';
-            document.getElementById('DELIVERABLES').getAttribute('style').visibility = 'hidden';
-            document.getElementById('CUSTOMERS').getAttribute('style').visibility = 'hidden';
-        }
-        function DELIVERABLES()
-        {
-            document.getElementById('system').getAttribute('style').visibility = 'hidden';
-            document.getElementById('employee').getAttribute('style').visibility = 'hidden';
-            document.getElementById('DELIVERABLES').getAttribute('style').visibility = 'visible';
-            document.getElementById('CUSTOMERS').getAttribute('style').visibility = 'hidden';
-        }
-        function CUSTOMERS()
-        {
-            document.getElementById('system').getAttribute('style').visibility = 'hidden';
-            document.getElementById('employee').getAttribute('style').visibility = 'hidden';
-            document.getElementById('DELIVERABLES').getAttribute('style').visibility = 'hidden';
-            document.getElementById('CUSTOMERS').getAttribute('style').visibility = 'visible';
-         }
-        
-// ]]>
-    </script>
+    });
+</script>
     <style type="text/css">
         .style2
         {
@@ -67,15 +62,20 @@
         {
             height: 25px;
         }
+        .style5
+        {
+            width: 294px;
+        }
     </style>
 </head>
 <body>
 <center>
     <form id="form1" runat="server" style="width: 1000px; margin-right: 12px;">    
      <table border="0" cellpadding="0" cellspacing="0">
-        <tr>
-            <td colspan="3">
-                <img src="../image/bg_head.jpg" style="width: 1000px; height: 97px" /></td>
+         <tr>
+            <td style="text-align: left" colspan="3" style="width: 1000px; height: 97px ;background-image: url('../image/bg_head.jpg');">
+             <div style ="font-size:25px; font-weight:bold; font-family:Verdana; color:White; margin-right: 30px;" class="style3" 
+                    > &nbsp;&nbsp;&nbsp;Online Post Office Management System</div>   </td>
         </tr>
         <tr>
             <td colspan="3">
@@ -92,13 +92,13 @@
                               cellspacing="0">
                          <tr>
                             <td >&nbsp;</td>
-                            <td onmouseover="SystemMouseover();" ><a href="">MANAGER SYSTEMS</a></td>
+                            <td><a id="ManagerSystem" href="">MANAGER SYSTEMS</a></td>
                             <td>::</td>
-                            <td onmouseover="CUSTOMERS();" ><a href="">MANAGER CUSTOMERS</a></td>
+                            <td ><a id="ManagerCustomers" href="">MANAGER CUSTOMERS</a></td>
                             <td>::</td>
-                            <td onmouseover="EmployeeMouseover();" ><a href="">MANAGER EMPLOYEES</a></td>
+                            <td ><a id="ManagerEmployees" href="">MANAGER EMPLOYEES</a></td>
                             <td>::</td>
-                            <td onmouseover="DELIVERABLES();"><a href="">MANAGER DELIVERABLES</a></td>
+                            <td ><a id="ManagerDeliverables" href="">MANAGER DELIVERABLES</a></td>
                             <td>::</td>
                             <td ><a href="">CHECK FEEDBACK</a></td>
                             <td>::</td>
@@ -127,7 +127,7 @@
                 <table>
                 <tr>
                     <td>  <% // MENU SYSTEM %>
-                    <div id="system"  style="cursor:hand; visibility:hidden;vertical-align:text-top;position:fixed;">
+                    <div id="system" style="margin-left:10px;">
                         <table border="0" cellpadding="0" cellspacing="0"  >
                         <tr>
                         <td >
@@ -144,9 +144,9 @@
                         </tr>
                         </table>
                      </div>   </td>
-                     <td> <% // MENU CUS %>
-                 <div id="CUSTOMERS" style="cursor:hand; visibility:hidden; vertical-align:text-top;position:fixed;">
-                        <table border="0" cellpadding="0" cellspacing="0"  >
+                     <td class="style5"> <% // MENU CUS %>
+                 <div id="customer" style="margin-left:150px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width ="160px"  >
                         <tr>
                         <td >
                            <a href="">View&nbsp;&nbsp;</a> 
@@ -159,8 +159,8 @@
                         </table>
                      </div></td>
                      <td> <% // MENU EMPLOYEE %>
-                 <div id="employee" style="cursor:hand; visibility:hidden; vertical-align:text-top;position:fixed;">
-                        <table border="0" cellpadding="0" cellspacing="0"  >
+                 <div id="employee" style="margin-left:80px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="250px"  >
                         <tr>                        
                         <td >
                            <a href="">View&nbsp;&nbsp;</a> 
@@ -177,8 +177,8 @@
                         </table>
                      </div></td>
                      <td>  <% // MENU DELIVERABLES %>
-                 <div id="DELIVERABLES" style="cursor:hand; visibility:hidden; vertical-align:text-top; position:fixed;">
-                        <table border="0" cellpadding="0" cellspacing="0"  >
+                 <div id="deliverables"  style="margin-left:220px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="200px"  >
                         <tr>                       
                         <td >
                            <a href="">View&nbsp;&nbsp;</a> 
@@ -194,19 +194,22 @@
                 </table>
                 </div>
                 </td>
-               <td style="text-align: right">Thằng Login vào &nbsp;&nbsp;</td>
+               <td style="text-align: right"> Hello Admin Log out</td>
                </table>              
             </td>       
         </tr>
         <tr>
-            <td class="vitvit">Admin Page</td>
+            <td class="vitvit" style="width:1000px; "><div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div></td>
         </tr>
         <tr>
             <td colspan="3" style="width: 1000px; text-align:left; height: 134px;background-image: url('../image/bg191.jpg');">
             <table >
             <tr>
-            <td style ="font-size:13px; font-weight:bold; font-family:Verdana; color:White;" 
-                    >
+            <td style ="font-size:13px; font-weight:bold; font-family:Verdana; color:White;"     >
              &nbsp;&nbsp; Coppyright &copy; 2010 TARS Delivery System  Company, Inc.
                 <br />
 &nbsp;&nbsp; ..........: Online Post Office Management System :.........</td>
@@ -224,12 +227,10 @@
         </tr>
     </table>
    
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+    
     </form>
   </center>  
 </body>
 </html>
+
+ 

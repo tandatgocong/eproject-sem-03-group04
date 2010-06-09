@@ -231,8 +231,8 @@ insert into OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,br
 select * from office
 
 ------------------ROLE
-insert into [ROLE] (roleId,roleName,roleDecriptions) values ('R01','Administrator','Quan ly cap cao')
-insert into [ROLE] (roleId,roleName,roleDecriptions) values ('R02','Employee','Nhan vien')
+insert into [ROLE] (roleId,roleName,roleDecriptions) values ('R0000001','Administrator','Quan ly cap cao')
+insert into [ROLE] (roleId,roleName,roleDecriptions) values ('R0000002','Employee','Nhan vien')
 
 select * from [role]
 

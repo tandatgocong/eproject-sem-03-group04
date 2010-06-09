@@ -20,8 +20,7 @@ namespace DataAccessLayers
             }
             catch (Exception)
             {
-                // sữ dụng defaut conntect
-                conn = new SqlConnection("Data Source=.;Initial Catalog=OnlinePostOffice;Persist Security Info=True;User ID=sa;Password=sa");
+                return;
             }
             
         }
@@ -74,10 +73,11 @@ namespace DataAccessLayers
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(Query, conn);
                 cmd.Parameters.AddRange(Params);
-                return cmd.ExecuteNonQuery();
+                 return   cmd.ExecuteNonQuery();                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                UtilitiesLayers.Logging.WriteString("system", ex.Message.ToString());
                 return 0;
             }
             finally
@@ -85,6 +85,27 @@ namespace DataAccessLayers
                 conn.Close();
             }
             
+        }
+        public int ExcuteNonQuery(string Query)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(Query, conn);
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                UtilitiesLayers.Logging.WriteString("system", ex.Message.ToString());
+                return 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
     }
 }

@@ -46,8 +46,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BranchInfo.cs" />
+    <Compile Include="Charges_on_weightInfo.cs" />
+    <Compile Include="Charges_on_DistanceInfo.cs" />
+    <Compile Include="CustomerInfo.cs" />
+    <Compile Include="DeliverableDetailInfo.cs" />
+    <Compile Include="DeliverableInfo.cs" />
+    <Compile Include="EmployeeInfo.cs" />
+    <Compile Include="FeedbackInfo.cs" />
     <Compile Include="OfficeInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemsInfo.cs" />
+    <Compile Include="ServiceTypeInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

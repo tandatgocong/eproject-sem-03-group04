@@ -22,7 +22,13 @@
 	font-size:10pt;
 	text-align:center;
 }
-
+a
+{
+	display:block;
+	text-decoration:none;
+	font-size:10pt;
+	
+}
 .heoheo a:hover
 {
 	display:block;

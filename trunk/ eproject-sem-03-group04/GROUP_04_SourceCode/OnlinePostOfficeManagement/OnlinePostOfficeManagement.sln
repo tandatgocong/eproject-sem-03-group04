@@ -14,7 +14,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "OnlinePostOffice", "OnlinePostOffice\", "{76548B70-0700-4290-97D7-2EAE8E9468AC}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFramework = "3.5"
-		ProjectReferences = "{0CCE066F-2715-4060-A24F-094BCEF6387A}|DataAccessLayers.dll;{A53FF821-A7B8-4292-A740-9ACCF5318AEE}|UtilitiesLayers.dll;{C7E1843F-0087-4CC7-B9C4-C355721E0DE7}|DataModelLayers.dll;{86594A1E-FDC7-4CB6-9C06-AF4AA3A3FA53}|InterfaceDataLayers.dll;"
+		ProjectReferences = "{0CCE066F-2715-4060-A24F-094BCEF6387A}|DataAccessLayers.dll;{A53FF821-A7B8-4292-A740-9ACCF5318AEE}|UtilitiesLayers.dll;{C7E1843F-0087-4CC7-B9C4-C355721E0DE7}|DataModelLayers.dll;{86594A1E-FDC7-4CB6-9C06-AF4AA3A3FA53}|InterfaceDataLayers.dll;{0193C2B2-5ED3-4379-92DB-54877725FBE5}|BusinessLayers.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/OnlinePostOffice"
 		Debug.AspNetCompiler.PhysicalPath = "OnlinePostOffice\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\OnlinePostOffice\"
@@ -29,7 +29,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "OnlinePostOffice", "OnlineP
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "1204"
+		VWDPort = "3465"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
