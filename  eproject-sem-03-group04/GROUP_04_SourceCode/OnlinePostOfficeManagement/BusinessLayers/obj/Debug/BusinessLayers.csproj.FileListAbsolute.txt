@@ -1,8 +1,17 @@
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\BusinessLayers.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\BusinessLayers.pdb
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataAccessLayers.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataModelLayers.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\InterfaceDataLayers.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\String_Indentity.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataAccessLayers.pdb
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataModelLayers.pdb
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\InterfaceDataLayers.pdb
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\ResolveAssemblyReference.cache
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\BusinessLayers.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\BusinessLayers.pdb
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\BusinessLayers.dll
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\BusinessLayers.pdb
-F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\ResolveAssemblyReference.cache
-F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\BusinessLayers.dll
-F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\BusinessLayers.pdb
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataAccessLayers.dll
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataModelLayers.dll
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\InterfaceDataLayers.dll
@@ -10,3 +19,8 @@ F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayer
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataAccessLayers.pdb
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\DataModelLayers.pdb
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\InterfaceDataLayers.pdb
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\ResolveAssemblyReference.cache
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\BusinessLayers.dll
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\obj\Debug\BusinessLayers.pdb
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\UtilitiesLayers.dll
+F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\BusinessLayers\bin\Debug\UtilitiesLayers.pdb

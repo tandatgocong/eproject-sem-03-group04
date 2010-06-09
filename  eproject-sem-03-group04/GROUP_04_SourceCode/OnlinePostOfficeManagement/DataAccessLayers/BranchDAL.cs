@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayers
 {
-    public class BranchDAL : InterfaceDataLayers.BrancheInterface
+    public class BranchDAL : InterfaceDataLayers.IBranch
     {
         #region Ibranch Members
         private BranchInfo Convert(DataRow Row)

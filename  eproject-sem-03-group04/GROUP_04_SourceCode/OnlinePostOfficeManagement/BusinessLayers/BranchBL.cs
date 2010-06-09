@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BusinessLayers
 {
-   public class BranchBL : InterfaceDataLayers.BrancheInterface
+   public class BranchBL : InterfaceDataLayers.IBranch
     {
         DataAccessLayers.BranchDAL dataAccess = new DataAccessLayers.BranchDAL();
         #region BrancheInterface Members
@@ -43,6 +43,45 @@ namespace BusinessLayers
         public DataModelLayers.BranchInfo getBrancheInfo(string _branchePin)
         {
             return dataAccess.getBrancheInfo(_branchePin);
+        }
+
+        #endregion
+
+        #region IBranch Members
+
+        IList<DataModelLayers.BranchInfo> InterfaceDataLayers.IBranch.getListBranches()
+        {
+            throw new NotImplementedException();
+        }
+
+        IList<DataModelLayers.BranchInfo> InterfaceDataLayers.IBranch.getBranchesDetail(string _branchePin)
+        {
+            throw new NotImplementedException();
+        }
+
+        IList<DataModelLayers.BranchInfo> InterfaceDataLayers.IBranch.searchBranches(string _brancheName)
+        {
+            throw new NotImplementedException();
+        }
+
+        bool InterfaceDataLayers.IBranch.InsertBranche(DataModelLayers.BranchInfo info)
+        {
+            throw new NotImplementedException();
+        }
+
+        bool InterfaceDataLayers.IBranch.UpdateBranche(DataModelLayers.BranchInfo info)
+        {
+            throw new NotImplementedException();
+        }
+
+        bool InterfaceDataLayers.IBranch.DeleteBranche(string _branchePin)
+        {
+            throw new NotImplementedException();
+        }
+
+        DataModelLayers.BranchInfo InterfaceDataLayers.IBranch.getBrancheInfo(string _branchePin)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

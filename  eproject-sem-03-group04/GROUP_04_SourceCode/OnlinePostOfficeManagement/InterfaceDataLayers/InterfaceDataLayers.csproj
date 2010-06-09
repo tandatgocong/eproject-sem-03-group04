@@ -45,8 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrancheInterface.cs" />
-    <Compile Include="OfficeInterface.cs" />
+    <Compile Include="IBranch.cs" />
+    <Compile Include="ICharges_on_Distance.cs" />
+    <Compile Include="ICharges_on_Weight.cs" />
+    <Compile Include="ICustomer.cs" />
+    <Compile Include="IDeliverable.cs" />
+    <Compile Include="IDeliverableDetail.cs" />
+    <Compile Include="IEmployee.cs" />
+    <Compile Include="IFeedback.cs" />
+    <Compile Include="IOffices.cs" />
+    <Compile Include="ISystems.cs" />
+    <Compile Include="IServiceType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

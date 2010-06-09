@@ -5,9 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
-    
     <link href="../App_Themes/StyleSheet.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .style2
@@ -21,12 +18,13 @@
     </style>
     </head>
 <body>
-<center>
+<center >
     <form id="form1" runat="server" style="width: 1000px; margin-right: 12px;">    
      <table border="0" cellpadding="0" cellspacing="0">
-        <tr>
-            <td colspan="3">
-                <img src="../image/bg_head.jpg" style="width: 1000px; height: 97px" /></td>
+               <tr>
+            <td style="text-align: left" colspan="3" style="width: 1000px; height: 97px ;background-image: url('../image/bg_head.jpg');">
+             <div style ="font-size:25px; font-weight:bold; font-family:Verdana; color:White; margin-right: 30px;" class="style3" 
+                    > &nbsp;&nbsp;&nbsp;Online Post Office Management System</div>   </td>
         </tr>
         <tr>
             <td colspan="3">
@@ -45,7 +43,9 @@
                             <td >&nbsp;</td>
                             <td style="width:15%;" ><a href="">HOME</a></td>
                             <td>::</td>
-                            <td style="width:15%;" ><a href="">GIỚI THIÊU</a></td>
+                            <td style="width:15%;" ><a href="">NEWS & EVENT</a></td>
+                            <td>::</td> 
+                            <td style="width:15%;" ><a href="">ABOUT TARS </a></td>
                             <td>::</td>
                             <td style="width:15%;"><a href="">SERVICES</a></td>
                             <td>::</td>
@@ -128,7 +128,11 @@
             </td>
         </tr>
         <tr>
-            <td class="vitvit">Customers Page.</td>
+            <td class="vitvit" style="width:1000px"><div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div></td>
         </tr>
         <tr>
             <td colspan="3" style="width: 1000px; text-align:left; height: 134px;background-image: url('../image/bg191.jpg');">
@@ -153,13 +157,7 @@
             </td>
         </tr>
     </table>
-   
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
+   </form>
   </center>  
 </body>
 </html>

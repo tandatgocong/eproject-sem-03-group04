@@ -21,6 +21,7 @@ CREATE TABLE BRANCH
 	CONSTRAINT PK_BRANCHES PRIMARY KEY(branchPin)
 )
 GO
+
 --- TABLE OFFICES
 CREATE TABLE OFFICE
 (
@@ -33,9 +34,11 @@ CREATE TABLE OFFICE
 	CONSTRAINT PK_OFFICES PRIMARY KEY(offficeId)
 )
 GO
+
 ALTER TABLE OFFICE
 ADD CONSTRAINT FK_OFFICE_BRANCHE FOREIGN KEY(branchPin) REFERENCES  BRANCH(branchPin)
 GO
+
 --- TABLE ROLE
 CREATE TABLE [ROLE]
 (
@@ -45,6 +48,7 @@ CREATE TABLE [ROLE]
 	CONSTRAINT PK_ROLES PRIMARY KEY(roleId)
 )
 GO
+
 ---- TABLE EMPLOYEE
 CREATE TABLE EMPLOYEE
 (
@@ -210,4 +214,108 @@ CREATE TABLE COUNT_VISIT
 )
 GO
 
--------------------------- INSERT RECORD -------------------------------
+CREATE XML SCHEMA COLLECTION EmployeeInfoSchema as
+N'<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="EmployeeInfo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="employeeId" type="xsd:string"/>
+        <xsd:element name="employeeEmail" type="xsd:string"/>
+        <xsd:element name="employeePassword" type="xsd:string"/>
+        <xsd:element name="employeeFirstName" type="xsd:string"/>
+        <xsd:element name="employeeLastName" type="xsd:string"/>
+        <xsd:element name="employeeBirthday" type="xsd:date"/>
+        <xsd:element name="employeeSex" type="xsd:string"/>
+		<xsd:element name="employeeAddress" type="xsd:string"/>
+		<xsd:element name="employeePhone" type="xsd:string"/>
+		<xsd:element name="employeeImage" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>'
+GO
+
+CREATE TABLE  AcceptRequest
+(
+	id  INT IDENTITY(1,1) PRIMARY KEY,
+	EmployeeInfo XML(CONTENT EmployeeInfoSchema) 
+)
+GO
+-------------------------------------------
+CREATE PROCEDURE EditProfileEmployeeProcedure 
+	@employeeId			VARCHAR(10),
+	@employeeEmail		VARCHAR(50),
+	@employeePassword	VARCHAR(50),
+	@employeeFirstName	VARCHAR(50),
+	@employeeLastName	VARCHAR(50),
+	@employeeBirthday	DATETIME,
+	@employeeSex		BIT,
+	@employeeAddress	VARCHAR(250),
+	@employeePhone		VARCHAR(20),
+	@employeeImage		VARCHAR(150)
+AS 
+BEGIN 
+	DECLARE @Temp varchar(1000)		
+	SET @Temp = N'<?xml version="1.0"?> 
+	<EmployeeInfo>
+		<employeeId>'+ @employeeId +'</employeeId>
+		<employeeEmail>'+ @employeeEmail +'</employeeEmail>
+		<employeePassword>'+ @employeePassword +'</employeePassword>
+		<employeeFirstName>'+ @employeeFirstName +'</employeeFirstName>
+		<employeeLastName>'+ @employeeLastName +'</employeeLastName>
+		<employeeBirthday>'+ @employeeBirthday +'</employeeBirthday>
+		<employeeSex>'+ CAST(@employeeSex AS varchar) +'</employeeSex>
+		<employeeAddress>'+ @employeeAddress +'</employeeAddress>
+		<employeePhone>'+ @employeePhone +'</employeePhone>
+		<employeeImage>'+ @employeeImage +'</employeeImage>
+	</EmployeeInfo>' 
+	
+	INSERT INTO AcceptRequest(EmployeeInfo)	Values(@Temp)
+END
+GO
+------------------------------------
+CREATE PROCEDURE AcceptChangeEmployeeProcedure 
+ @id INT
+AS 
+BEGIN 
+	DECLARE	@employeeId			VARCHAR(10);
+	DECLARE	@employeeEmail		VARCHAR(50);
+	DECLARE	@employeePassword	VARCHAR(50);
+	DECLARE	@employeeFirstName	VARCHAR(50);
+	DECLARE	@employeeLastName	VARCHAR(50);
+	DECLARE	@employeeBirthday	DATETIME;
+	DECLARE	@employeeSex		BIT;
+	DECLARE	@employeeAddress	VARCHAR(250);
+	DECLARE	@employeePhone		VARCHAR(20);
+	DECLARE	@employeeImage		VARCHAR(150),
+	@message xml(CONTENT EmployeeInfoSchema)
+	
+	SET @message			= (SELECT CAST(EmployeeInfo AS XML) FROM AcceptRequest WHERE id=@id ); 
+	SET @employeeId			= @message.value('(/EmployeeInfo/employeeId)[1]', 'varchar(10)');
+	SET	@employeeEmail		= @message.value('(/EmployeeInfo/employeeEmail)[1]', 'varchar(50)');
+	SET	@employeePassword	= @message.value('(/EmployeeInfo/employeePassword)[1]', 'varchar(50)');
+	SET	@employeeFirstName	= @message.value('(/EmployeeInfo/employeeFirstName)[1]', 'varchar(50)');
+	SET	@employeeLastName	= @message.value('(/EmployeeInfo/employeeLastName)[1]', 'varchar(50)');
+	SET	@employeeBirthday	= @message.value('(/EmployeeInfo/employeeBirthday)[1]', 'DATETIME');
+	SET	@employeeSex		= @message.value('(/EmployeeInfo/employeeSex)[1]', 'BIT');
+	SET	@employeeAddress	= @message.value('(/EmployeeInfo/employeeAddress)[1]', 'varchar(250)');
+	SET	@employeePhone		= @message.value('(/EmployeeInfo/employeePhone)[1]', 'varchar(15)');
+	SET	@employeeImage		= @message.value('(/EmployeeInfo/employeeImage)[1]', 'varchar(250)');
+	---
+	UPDATE EMPLOYEE
+	SET
+		employeePassword=@employeePassword,
+		employeeFirstName=@employeeFirstName,
+		employeeLastName=@employeeLastName,
+		employeeBirthday=@employeeBirthday,
+		employeeSex=@employeeSex,
+		employeeAddress=@employeeAddress,
+		employeePhone=@employeePhone,
+		employeeImage=@employeeImage
+	WHERE employeeId=@employeeId
+	DELETE FROM AcceptRequest WHERE id=@id
+	--- 
+END
+GO
+------------------------------------ INSERT RECORD -------------------------------

@@ -23,6 +23,11 @@ F:\SourceCode\UtilitiesLayers\bin\Debug\UtilitiesLayers.pdb
 F:\SourceCode\UtilitiesLayers\obj\Debug\ResolveAssemblyReference.cache
 F:\SourceCode\UtilitiesLayers\obj\Debug\UtilitiesLayers.dll
 F:\SourceCode\UtilitiesLayers\obj\Debug\UtilitiesLayers.pdb
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\UtilitiesLayers\bin\Debug\UtilitiesLayers.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\UtilitiesLayers\bin\Debug\UtilitiesLayers.pdb
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\UtilitiesLayers\obj\Debug\ResolveAssemblyReference.cache
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\UtilitiesLayers\obj\Debug\UtilitiesLayers.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\UtilitiesLayers\obj\Debug\UtilitiesLayers.pdb
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\UtilitiesLayers\bin\Debug\UtilitiesLayers.dll
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\UtilitiesLayers\bin\Debug\UtilitiesLayers.pdb
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\UtilitiesLayers\obj\Debug\ResolveAssemblyReference.cache

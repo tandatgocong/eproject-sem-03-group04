@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -89,9 +89,15 @@
             <td colspan="3">
                 <asp:GridView ID="GridView2" runat="server" Width="693px">
                 </asp:GridView>
-            </td>
+         
+    <fckeditor id="FCKeditor1" runat="server" basepath="~/fckeditor/" 
+        height="400px" width="800px">
+    </fckeditor>
+   </td>
         </tr>
     </table>
+    <FCKeditorV2:FCKeditor ID="FCKeditor2" runat="server" BasePath="~/fckeditor/">
+    </FCKeditorV2:FCKeditor>
     </form>
 </body>
 </html>

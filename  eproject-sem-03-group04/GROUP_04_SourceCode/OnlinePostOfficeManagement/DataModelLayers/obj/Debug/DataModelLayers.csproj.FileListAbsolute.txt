@@ -1,3 +1,8 @@
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\DataModelLayers\bin\Debug\DataModelLayers.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\DataModelLayers\bin\Debug\DataModelLayers.pdb
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\DataModelLayers\obj\Debug\ResolveAssemblyReference.cache
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\DataModelLayers\obj\Debug\DataModelLayers.dll
+E:\Aptech\eproject copy version dung\GROUP_04_SourceCode\OnlinePostOfficeManagement\DataModelLayers\obj\Debug\DataModelLayers.pdb
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\DataModelLayers\bin\Debug\DataModelLayers.dll
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\DataModelLayers\bin\Debug\DataModelLayers.pdb
 F:\eProject SEM III\GROUP_04_SourceCode\OnlinePostOfficeManagement\DataModelLayers\obj\Debug\ResolveAssemblyReference.cache

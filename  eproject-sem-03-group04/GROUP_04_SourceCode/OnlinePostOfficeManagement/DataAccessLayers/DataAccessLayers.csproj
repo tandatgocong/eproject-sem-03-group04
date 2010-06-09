@@ -49,10 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BranchDAL.cs" />
+    <Compile Include="Charges_on_DistanceDAL.cs" />
+    <Compile Include="Charges_on_WeightDAL.cs" />
+    <Compile Include="CustomersDAL.cs" />
     <Compile Include="DatabaseConnect.cs" />
+    <Compile Include="DeliverableDAL.cs" />
+    <Compile Include="DeliverableDetailDAL.cs" />
+    <Compile Include="EmployeeDAL.cs" />
+    <Compile Include="FeedbackDAL.cs" />
     <Compile Include="OfficeDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceTypeDAL.cs" />
     <Compile Include="StringIndentity.cs" />
+    <Compile Include="SystemsDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataModelLayers\DataModelLayers.csproj">
@@ -62,6 +71,10 @@
     <ProjectReference Include="..\InterfaceDataLayers\InterfaceDataLayers.csproj">
       <Project>{86594A1E-FDC7-4CB6-9C06-AF4AA3A3FA53}</Project>
       <Name>InterfaceDataLayers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilitiesLayers\UtilitiesLayers.csproj">
+      <Project>{A53FF821-A7B8-4292-A740-9ACCF5318AEE}</Project>
+      <Name>UtilitiesLayers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
