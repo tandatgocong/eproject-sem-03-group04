@@ -113,5 +113,43 @@ namespace DataAccessLayers
             return Convert(row);
         }
         #endregion
+
+        #region IOffices Members
+
+
+        public IList<OfficeInfo> getOfficebyBranch(string _branchId)
+        {
+            DatabaseConnect Conn = new DatabaseConnect();
+            SqlParameter[] Params = new SqlParameter[]{
+                new SqlParameter("branchPin",_branchId)
+            };
+
+            DataTable Result = Conn.CreateDataTable("select * from  OFFICE where branchPin=@branchPin", Params);
+            List<OfficeInfo> List = new List<OfficeInfo>();
+            foreach (DataRow row in Result.Rows)
+            {
+                List.Add(Convert(row));
+            }
+            return List;
+        }
+
+        #endregion
+
+        #region IOffices Members
+
+
+        public int BranchExist(string _branchId)
+        {
+            DatabaseConnect Conn = new DatabaseConnect();
+            SqlParameter[] Params = new SqlParameter[]{
+                new SqlParameter("branchPin",_branchId)
+            };
+
+            DataTable Result = Conn.CreateDataTable("select * from  OFFICE where branchPin=@branchPin", Params);
+            return Result.Rows.Count;
+
+        }
+
+        #endregion
     }
 }

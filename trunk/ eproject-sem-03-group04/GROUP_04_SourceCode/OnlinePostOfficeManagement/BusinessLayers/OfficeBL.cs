@@ -46,6 +46,26 @@ namespace BusinessLayers
         }
 
         #endregion
+
+        #region IOffices Members
+
+
+        public IList<DataModelLayers.OfficeInfo> getOfficebyBranch(string _branchId)
+        {
+            return office.getOfficebyBranch(_branchId);
+        }
+
+        #endregion
+
+        #region IOffices Members
+
+
+        public int BranchExist(string _branchId)
+        {
+            return office.BranchExist(_branchId);
+        }
+
+        #endregion
     }
 
 }

@@ -271,7 +271,7 @@ BEGIN
 		<employeeImage>'+ @employeeImage +'</employeeImage>
 	</EmployeeInfo>' 
 	
-	INSERT INTO AcceptRequest(EmployeeInfo)	Values(@Temp)
+	INSERT INTO AcceptRequest(EmployeeInfo)	VALUES(@Temp)
 END
 GO
 ------------------------------------
@@ -318,4 +318,137 @@ BEGIN
 	--- 
 END
 GO
+----------------------
+-- Check User Login
+CREATE PROCEDURE WebLogin
+	@email			VARCHAR(250),
+	@password		VARCHAR(50),
+	@result			VARCHAR(3) OUTPUT
+AS
+BEGIN
+	SET @result='HEO'
+	IF EXISTS (SELECT customerEmail FROM CUSTOMER WHERE customerEmail = @email AND customerPassword = @password)
+		BEGIN 
+			SET @result='CUS'
+		END		
+	ELSE IF  EXISTS (SELECT employeeEmail FROM EMPLOYEE WHERE employeeEmail = @email AND employeePassword = @password AND roleId='ROL0000001')
+		BEGIN 
+			SET @result='ADM'
+		END		
+	ELSE IF EXISTS(SELECT employeeEmail FROM EMPLOYEE WHERE employeeEmail = @email AND employeePassword = @password AND roleId='ROL0000002')
+		BEGIN 
+			SET @result='EPL'
+		END				
+END
+GO
+------------------
+-- Check Email EXISTS
+CREATE PROCEDURE IsExisted
+	@email			VARCHAR(250),	
+	@result			BIT OUTPUT
+AS
+BEGIN
+	SET @result= 1
+	IF EXISTS (SELECT customerEmail FROM CUSTOMER WHERE customerEmail = @email)
+		BEGIN 
+			SET @result=0
+		END		
+	ELSE IF  EXISTS (SELECT employeeEmail FROM EMPLOYEE WHERE employeeEmail = @email)
+		BEGIN 
+			SET @result=0
+		END					
+END
+GO
 ------------------------------------ INSERT RECORD -------------------------------
+-- Table BRANCH
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000001','HO CHI MINH','128, CMT8 Street, Ward 5, Tan Binh District','(84)08-39906511')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000002','HA NOI','41/37 SHN, Tien Su, Mon Khoai ward, Su District','(84)04-39905678')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000003','THANH PHO VINH','5/2, Van Long street, Ward 10, HK District','(84)065-3990568')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000004','DA NANG','145, Ba Ku street, District 10','(84)08-39906511')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000005','NHA TRANG','22/11/2, Luu Tu street, Tan Thanh ward, District 2','(84)08-39907689')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000006','BINH THUAN','144/222, Van Thanh street, 7 ward, District 1','(84)07-39999911')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000007','BINH DUONG','300 KAP, Lung Tung street, Ward 4, Li Tinh District','(84)04-3000011')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000008','KIEN GIANG','123 Tolo, Nga Voi, Muong','(84)08-38888511')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000009','HAU GIANG','22, Kho Xeng, Thanh Tan ward, District 15','(84)064-39977771')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000010','TIEN GIANG','92/224, Tran Thai Binh, Gia Tan ward. District 8','(84)04-3996511')
+INSERT INTO BRANCH (branchPin,branchName,branchAddress,branchPhone) VALUES('BR00000011','CAN THO','128, Au Co Street, Ward 5, Tan Binh District','(84)06-3990000511')
+-- Table Office
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000001','Hong Ha Office','12/22, Tran Hung Dao, ward 10, Binh Thanh district','(84)08-39906511','officehcm01@onlinepostoffice.com','BR00000001')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000002','Phu Thanh Office','2, Luu Tu street, Tan Thanh ward, District 2','(84)08-39322321','officehcm02@onlinepostoffice.com','BR00000001')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000003','Binh Phuoc Office','12/22, Tran Hung Dao, ward 10, Binh Thanh district','(84)08-35346561','officehcm04@onlinepostoffice.com','BR00000001')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000004','Thanh Binh Office','5, Van Long street, Ward 10, HK District','(84)06-78546535','officehcm05@onlinepostoffice.com','BR00000002')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000005','Nguyen Trai Office','2, Luu Tu street, Tan Thanh ward, District 2','(84)06-65365436','officehcm06@onlinepostoffice.com','BR00000002')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000006','Binh Hung Office','5, Van Long street, Ward 10, HK District','(84)04-86587658','officehcm07@onlinepostoffice.com','BR00000003')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000007','Chi Thanh Office','12/22, Tran Hung Dao, ward 10, Binh Thanh district','(84)05-39906511','officehcm08@onlinepostoffice.com','BR00000003')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000008','Luu Tu Office','2, Luu Tu street, Tan Thanh ward, District 2','(84)06-97698696','officehcm09@onlinepostoffice.com','BR00000004')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000009','Van Long Office','5, Van Long street, Ward 10, HK District','(84)04-21343143','officehanoi@onlinepostoffice.com','BR00000004')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000010','Tran Hung Dao Office','12/22, Tran Hung Dao, ward 10, Binh Thanh district','(84)05-53432754','officehaiph@onlinepostoffice.com','BR00000005')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000011','Au Co Office','12, Au Co Street, Ward 5, Tan Binh District','(84)07-53686007','officecanth@onlinepostoffice.com','BR00000005')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000012','Van Truy Office','5, Van Long street, Ward 10, HK District','(84)07-36587656','officenhatr@onlinepostoffice.com','BR00000006')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000013','Thanh Tunng Office','12, Au Co Street, Ward 5, Tan Binh District','(84)04-21432543','nhatrang@onlinepostoffice.com','BR00000006')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000014','Che Lan Office','12/22, Tran Hung Dao, ward 10, Binh Thanh district','(84)63-87464355','tienggorg@onlinepostoffice.com','BR00000007')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000015','Go Cong Office','12, Au Co Street, Ward 5, Tan Binh District','(84)63-25457654','haugiangorg@onlinepostoffice.com','BR00000008')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000016','Thanh Binh Office','2, Luu Tu street, Tan Thanh ward, District 2','(84)62-65438453','lamdongorg@onlinepostoffice.com','BR00000009')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000017','New Work Office','12/22, Tran Hung Dao, ward 10, Binh Thanh district','(84)02-54356765','linhtuanhcm@onlinepostoffice.com','BR00000010')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000018','Dimon Office','5, Van Long street, Ward 10, HK District','(84)05-78784532','thanhtamhcm@onlinepostoffice.com','BR00000011')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000019','Thuan Kieu Office','2, Luu Tu street, Tan Thanh ward, District 2','(84)03-24544676','nguyenthanhct@onlinepostoffice.com','BR00000011')
+INSERT INTO OFFICE (offficeId,officeName,officeAddress,officePhone,officeMail,branchPin) VALUES('OF00000020','Partion Office','12/22, Tran Hung Dao, ward 10, Binh Thanh district','(84)09-96424254','datlthcm@onlinepostoffice.com','BR00000011')
+-- Table ROLE
+INSERT INTO [ROLE] (roleId,roleName,roleDecriptions) VALUES ('ROL0000001','Administrator','Manager Systems')
+INSERT INTO [ROLE] (roleId,roleName,roleDecriptions) VALUES ('ROL0000002','Employee','')
+-- Table SERVICESTYPE
+INSERT INTO SERVICESTYPE (servicesId,servicesName,servicesDecriptions,servicesCharges) VALUES ('SEV0000001','Courier','man posting mails',12000)
+INSERT INTO SERVICESTYPE (servicesId,servicesName,servicesDecriptions,servicesCharges) VALUES ('SEV0000002','VPP','package posting',9000)
+INSERT INTO SERVICESTYPE (servicesId,servicesName,servicesDecriptions,servicesCharges) VALUES ('SEV0000003','Speed Post','Fast Delivery',5000)
+INSERT INTO SERVICESTYPE (servicesId,servicesName,servicesDecriptions,servicesCharges) VALUES ('SEV0000004','Normal Post','Normal Posting',15000)
+-- Table EMPLOYEE
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000001','tandatgocong@gmail.com','beheo1207','DAT','LE TAN','11/30/1988',0,'128, CMT8 Street, Ward 5, Tan Binh District','0909093433','employee1.jpg','OF00000001','ROL0000001')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000002','ngothao@gmail.com','123','LAN','LE THI','10/15/1986',1,'25, Tran Dinh Xu Street, Ward 1, 1 District','0906010843','employee2.jpg','OF00000001','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000003','foreverlove@yahoo.com','123','TUAN','NGUYEN VAN','3/5/1978',0,'22 ,Nguyen Trai Street, Ward 7, 5 District','0932898098','employee3.jpg','OF00000002','ROL0000001')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000004','tuongmap@yahoo.com','123','TUONG','MAP','11/5/1989',0,'195/222, Pham Van Hai, Ward 8, Tan Binh District','0958333829','employee4.jpg','OF00000003','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000005','tuandinh@yahoo.com','123','DINH','TRAN TUAN','12/19/1978',0,'48 ,Nguyen Thai Son Street, Ward 4, Tan Phu District','0911758848','employee5.jpg','OF00000004','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000006','trangnumberone@gmail.com','123','TRANG','NGUYEN THI THUY','12/12/1988',1,'84/294 ,Le Loi Street, Ward 1, 1 District','0981847365','employee6.jpg','OF00000004','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000007','tienthanh@hotmail.com','123','TIEN','TRAN THANH','3/5/1988',0,'325 ,Le Dai Hanh Street, Ward 13, 11 District','0973659234','employee7.jpg','OF00000002','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000008','vovanhai@yahoo.com','123','HAI','VO VAN','4/27/1987',0,'99/35/223 ,Tran Hung Dao Street, Ward 4, 1 District','01227748362','employee8.jpg','OF00000001','ROL0000001')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000009','nguyenson@freemail.com','123','SON','NGUYEN','1/5/1982',1,'44bis ,Su Van Hanh Street, Ward 4, 10 District','01219283745','employee9.jpg','OF00000001','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000010','thanhphuong@gmail.com','123','PHUONG','NGUYEN THANH','9/16/1985',1,'76 ,Hoa Hao Street, Ward 3, 10 District','0909183756','employee10.jpg','OF00000002','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000011','theduy@yahoo.com','dongian12','DUY','PHAM THE','4/7/1979',1,'485/242 ,Hung Vuong Street, Ward 9, 5 District','0901847563','employee11.jpg','OF00000003','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000012','thanhthao@hotmail.com','phuctap86','THAO','HONG THI PHUONG','3/5/1983',0,'44/2 ,Ba Hat Street, Ward 7, 10 District','0937366352','employee12.jpg','OF00000004','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000013','binhminh@gmail.com','datgia','MINH','NGUYEN BINH','2/5/1978',1,'544 ,An Duong Vuong Street, Ward 8, 10 District','0947264753','employee13.jpg','OF00000004','ROL0000002')
+INSERT INTO EMPLOYEE (employeeId,employeeEmail,employeePassword,employeeFirstName,employeeLastName,employeeBirthday,employeeSex,employeeAddress,employeePhone,employeeImage,offficeId,roleId)
+ VALUES ('EMP0000014','kimbien@yahoo.com','chandoi','BIEN','NGUYEN VAN','11/11/1986',1,'443 ,Nguyen Duy Duong Street, Ward 3, 10 District','0938262843','employee14.jpg','OF00000002','ROL0000002')
+
+-- Table Customer
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000001','gocongit@gmail.com','123','LAM','NGUYEN THANH','4/6/1986',1,'332 ,Tran Binh Trong Street, Ward 6, 10 District','0938573322')
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000002','lahanqua@gmail.com','123','MINH','NGUYEN DUY','4/6/1988',1,'584 ,Nguyen Dinh Chieu Street, Ward 5, 3 District','0938371653')
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000003','traitao@gmail.com','123','NAM','TRAN THANH','7/2/1978',1,'252 ,Au Co Street, Ward 3, Tan Binh District','0937164524')
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000004','tinhtien@yahoo.com','123','KIM','AU SUONG','5/6/1989',0,'237 ,Dinh Tien Hoang Street, Ward 6, 5 District','01229482756')
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000005','vuson@yahoo.com','123','PHUONG','TRAN MY','9/6/1984',0,'954 ,Vo Thi Sau Street, Ward 8, 4 District','0938748382')
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000006','tantan99@yahoo.com','123','QUAN','NGUYEN DINH','4/5/1991',1,'363 ,Hung Vuong Street, Ward 5, 8 District','0938473625')
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000007','ambinh@yahoo.com','123','NHU','PHAM THAI','3/5/1986',0,'26 ,Tran Binh Trong Street, Ward 3, 4 District','0909385737')
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000008','mynune@gmail.com','123','TIEN','DO THANH','5/2/1986',1,'74 ,Vinh Vien Street, Ward 6, 3 District','0933827536')
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000009','trietly@yahoo.com','123','TRUNG','NGUYEN TUAN','4/1/1986',1,'633 ,Binh Long Street, Ward 1, 1 District','0948277244')
+INSERT INTO CUSTOMER (customerId,customerEmail,customerPassword,customerFistName,customerLastName,customerBirthday,customerSex,customerAddress,customerPhone)
+ VALUES ('CUS0000010','tinhphong@yahoo.com','123','QUANG','AU NHAN','4/4/1986',1,'73 ,Truong Trinh Street, Ward 2, 6 District','0948588573')

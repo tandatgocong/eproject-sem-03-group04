@@ -75,9 +75,8 @@ namespace DataAccessLayers
                 cmd.Parameters.AddRange(Params);
                  return   cmd.ExecuteNonQuery();                
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                UtilitiesLayers.Logging.WriteString("system", ex.Message.ToString());
                 return 0;
             }
             finally
@@ -96,16 +95,72 @@ namespace DataAccessLayers
                 SqlCommand cmd = new SqlCommand(Query, conn);
                 return cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                UtilitiesLayers.Logging.WriteString("system", ex.Message.ToString());
                 return 0;
             }
             finally
             {
                 conn.Close();
             }
-
+        }
+        public string WebLogin(string username, string pass)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = conn;
+                cmd.CommandText = "WebLogin";
+                cmd.Parameters.Add("@email", SqlDbType.Char, 50);
+                cmd.Parameters["@email"].Value = username.ToString();
+                cmd.Parameters.Add("@password", SqlDbType.Char, 50);
+                cmd.Parameters["@password"].Value = pass.ToString();
+                cmd.Parameters.Add("@result", SqlDbType.Char, 50);
+                cmd.Parameters[2].Direction = ParameterDirection.Output;                
+                cmd.ExecuteNonQuery();
+                string returnValue = (string)cmd.Parameters["@result"].Value;
+                return returnValue;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public bool IsExisted(string email)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = conn;
+                cmd.CommandText = "IsExisted";
+                cmd.Parameters.Add("@email", SqlDbType.Char, 50);
+                cmd.Parameters["@email"].Value = email.ToString();              
+                cmd.Parameters.Add("@result", SqlDbType.Bit);
+                cmd.Parameters[1].Direction = ParameterDirection.Output;
+                cmd.ExecuteNonQuery();
+                bool returnValue = (bool)cmd.Parameters["@result"].Value;
+                return returnValue;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

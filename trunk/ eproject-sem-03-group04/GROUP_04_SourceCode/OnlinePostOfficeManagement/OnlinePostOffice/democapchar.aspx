@@ -18,6 +18,8 @@
         onclick="Button1_Click" />
     <cc1:CaptchaControl ID="CaptchaControl1" runat="server" />
     <asp:Label ID="lblCodeResult" runat="server" Text="Label"></asp:Label>
+    <asp:Button ID="Button2" runat="server" Height="162px" Text="Button" 
+        Width="191px" />
     </form>
 </body>
 </html>
