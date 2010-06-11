@@ -58,7 +58,17 @@ namespace BusinessLayers
 
         public string WebLogin(string username, string password)
         {
-            throw new NotImplementedException();
+           return  system.WebLogin(username, password);
+        }
+
+        #endregion
+
+        #region ISystems Members
+
+
+        public bool CheckAvailabilityEmail(string email)
+        {
+            return system.CheckAvailabilityEmail(email);
         }
 
         #endregion

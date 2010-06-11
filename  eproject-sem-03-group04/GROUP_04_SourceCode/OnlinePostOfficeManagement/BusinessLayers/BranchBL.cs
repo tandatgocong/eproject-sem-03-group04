@@ -8,7 +8,7 @@ namespace BusinessLayers
    public class BranchBL : InterfaceDataLayers.IBranch
     {
         DataAccessLayers.BranchDAL dataAccess = new DataAccessLayers.BranchDAL();
-        #region BrancheInterface Members
+       #region IBranch Members
 
         public IList<DataModelLayers.BranchInfo> getListBranches()
         {
@@ -49,39 +49,10 @@ namespace BusinessLayers
 
         #region IBranch Members
 
-        IList<DataModelLayers.BranchInfo> InterfaceDataLayers.IBranch.getListBranches()
-        {
-            throw new NotImplementedException();
-        }
 
-        IList<DataModelLayers.BranchInfo> InterfaceDataLayers.IBranch.getBranchesDetail(string _branchePin)
+        public IList<DataModelLayers.BranchInfo> AdvancedSearch(string _brancheName, string _brancheAddress, string _branchePhone)
         {
-            throw new NotImplementedException();
-        }
-
-        IList<DataModelLayers.BranchInfo> InterfaceDataLayers.IBranch.searchBranches(string _brancheName)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool InterfaceDataLayers.IBranch.InsertBranche(DataModelLayers.BranchInfo info)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool InterfaceDataLayers.IBranch.UpdateBranche(DataModelLayers.BranchInfo info)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool InterfaceDataLayers.IBranch.DeleteBranche(string _branchePin)
-        {
-            throw new NotImplementedException();
-        }
-
-        DataModelLayers.BranchInfo InterfaceDataLayers.IBranch.getBrancheInfo(string _branchePin)
-        {
-            throw new NotImplementedException();
+            return dataAccess.AdvancedSearch(_brancheName, _brancheAddress, _branchePhone);
         }
 
         #endregion

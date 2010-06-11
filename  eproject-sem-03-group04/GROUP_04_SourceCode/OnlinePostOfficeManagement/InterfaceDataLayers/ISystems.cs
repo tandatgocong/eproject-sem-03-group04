@@ -17,5 +17,6 @@ namespace InterfaceDataLayers
         SystemsInfo getRoleInfo(string _Id);
         void CountNumberVisits();
         string WebLogin(string username, string password);
+        bool CheckAvailabilityEmail(string email);
     }
 }

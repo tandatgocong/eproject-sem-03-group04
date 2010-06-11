@@ -25,4 +25,8 @@ public partial class _Default : System.Web.UI.Page
         Binddata();
     }
 
+    protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
+    {
+        e.Authenticated = true;
+    }
 }

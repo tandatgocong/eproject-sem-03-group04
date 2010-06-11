@@ -128,7 +128,19 @@ namespace DataAccessLayers
 
         public string WebLogin(string username, string password)
         {
-            throw new NotImplementedException();
+            DatabaseConnect Conn = new DatabaseConnect();
+            return Conn.WebLogin(username, password);
+        }
+
+        #endregion
+
+        #region ISystems Members
+
+
+        public bool CheckAvailabilityEmail(string email)
+        {
+            DatabaseConnect Conn = new DatabaseConnect();
+            return Conn.IsExisted(email);
         }
 
         #endregion

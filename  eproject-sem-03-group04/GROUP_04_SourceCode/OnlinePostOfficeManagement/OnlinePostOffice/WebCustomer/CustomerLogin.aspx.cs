@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BusinessLayers;
 
-public partial class WebAdmin_AdminMasterPage : System.Web.UI.MasterPage
+public partial class WebCustomer_CustomerLogin : System.Web.UI.Page
 {
+    SystemsBL system = new SystemsBL();
     protected void Page_Load(object sender, EventArgs e)
     {
-        this.Label1.Text = DateTime.Now.ToLongDateString();
-        this.lblogin.Text = Session["UserLogin"].ToString();
     }
 }

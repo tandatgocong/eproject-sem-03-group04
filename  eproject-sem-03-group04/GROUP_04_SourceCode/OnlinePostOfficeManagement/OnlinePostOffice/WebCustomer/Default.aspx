@@ -9,6 +9,8 @@
         <tr>
             <td style="width: 71px">
                 <img src="../image/tmpxoa2.JPG" style="width: 361px; height: 272px" />&nbsp;&nbsp;
+                <asp:LinkButton ID="LinkButton3" runat="server" 
+                    PostBackUrl="~/WebCustomer/Default.aspx">LinkButton</asp:LinkButton>
             </td>
             <td>
                 <img src="../image/tmpxoa3.JPG" style="width: 361px; height: 272px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -18,7 +20,8 @@
         </tr>
         <tr>
             <td style="width: 71px">
-                &nbsp;</td>
+                <asp:Button ID="Button1" runat="server" Text="Button" />
+            </td>
             <td>
                 &nbsp;</td>
             <td>

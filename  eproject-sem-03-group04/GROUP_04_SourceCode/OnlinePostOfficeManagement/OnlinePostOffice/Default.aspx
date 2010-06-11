@@ -96,8 +96,17 @@
    </td>
         </tr>
     </table>
-    <FCKeditorV2:FCKeditor ID="FCKeditor2" runat="server" BasePath="~/fckeditor/">
-    </FCKeditorV2:FCKeditor>
+    <asp:LoginView ID="LoginView1" runat="server">
+        <LoggedInTemplate>
+            chet di
+        </LoggedInTemplate>
+        <AnonymousTemplate>
+            <asp:Login ID="Login1" runat="server" onauthenticate="Login1_Authenticate">
+            </asp:Login>
+        </AnonymousTemplate>
+    </asp:LoginView>
+    <asp:Calendar ID="Calendar1" runat="server" UseAccessibleHeader="False">
+    </asp:Calendar>
     </form>
 </body>
 </html>

@@ -85,13 +85,13 @@ namespace DataAccessLayers
         public bool UpdateBranche(DataModelLayers.BranchInfo info)
         {
             SqlParameter[] Params = new SqlParameter[]{
-               new SqlParameter("branchPin", info.BranchPin),
-                new SqlParameter("branchName", info.BranchName),
-                new SqlParameter("branchAddress", info.BranchAddress),
-                new SqlParameter("branchPhone", info.BranchPhone)
+                new SqlParameter("@branchPin", info.BranchPin),
+                new SqlParameter("@branchName", info.BranchName),
+                new SqlParameter("@branchAddress", info.BranchAddress),
+                new SqlParameter("@branchPhone", info.BranchPhone)
                 };
             DatabaseConnect Conn = new DatabaseConnect();
-            int result = Conn.ExcuteNonQuery("UPDATE BRANCH SET branchName = @branchName, branchAddress = @branchAddress, branchPhone = @branchPhone where branchPin=@branchPin", Params);
+            int result = Conn.ExcuteNonQuery("UPDATE BRANCH SET branchName = @branchName, branchAddress = @branchAddress, branchPhone = @branchPhone where branchPin = @branchPin", Params);
             return (result == 1 ? true : false);
         }
         public bool DeleteBranche(string _branchPin)
@@ -110,5 +110,22 @@ namespace DataAccessLayers
         }
         #endregion
 
+
+        #region IBranch Members
+
+
+        public IList<BranchInfo> AdvancedSearch(string _brancheName, string _brancheAddress, string _branchePhone)
+        {
+            DatabaseConnect Conn = new DatabaseConnect();
+            DataTable Result = Conn.CreateDataTable("select * from BRANCH WHERE branchName like '%" + _brancheName.Trim().ToString() + "%' OR branchAddress like '%" + _brancheAddress.Trim().ToString() + "%' OR branchPhone like '%" + _branchePhone.Trim().ToString() + "%'");
+            List<BranchInfo> List = new List<BranchInfo>();
+            foreach (DataRow row in Result.Rows)
+            {
+                List.Add(Convert(row));
+            }
+            return List;
+        }
+
+        #endregion
     }
 }

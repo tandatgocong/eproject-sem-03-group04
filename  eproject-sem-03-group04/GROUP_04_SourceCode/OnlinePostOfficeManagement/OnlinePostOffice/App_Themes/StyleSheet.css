@@ -1,6 +1,6 @@
 ﻿body 
 {
-    background-image:url('../image/home16.jpg');
+   background:#e8f5fe;
 }
 .heoheo 
 {
@@ -27,6 +27,13 @@ a
 	display:block;
 	text-decoration:none;
 	font-size:10pt;
+	
+}
+a:hover
+{
+	display:block;
+	color:Red;
+	text-decoration:none;
 	
 }
 .heoheo a:hover
@@ -60,7 +67,6 @@ a
 .vitvit
 {
     background:white;
-    height:755px;
     text-align:left;
     vertical-align:text-top;
 }
